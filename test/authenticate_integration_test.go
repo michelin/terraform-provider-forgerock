@@ -1,3 +1,6 @@
+//go:build integration_tests
+// +build integration_tests
+
 package test
 
 import (
@@ -99,15 +102,13 @@ func TestClientCustomUpdateValues(t *testing.T) {
 
 }
 
-
 func TestDestroyClients(t *testing.T) {
 	executeCommand("terraform", "-chdir=./usecase4", "plan")
-	err := executeCommand("terraform", "-chdir=./usecase4", "apply","-auto-approve")
+	err := executeCommand("terraform", "-chdir=./usecase4", "apply", "-auto-approve")
 	if err != nil {
 		t.Errorf("Should not be error %s", err)
 	}
 
-	
 	must_not_exist_clients_names := []string{
 		"INTEGRATION_TEST_AUTO_CLIENT_1",
 		"INTEGRATION_TEST_AUTO_CLIENT_2",

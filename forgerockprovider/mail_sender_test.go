@@ -1,3 +1,6 @@
+//go:build unit_tests
+// +build unit_tests
+
 package forgerockprovider
 
 import (

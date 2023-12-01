@@ -22,6 +22,7 @@ terraform-provider-forgerock introduces Forgerock OAuth2 client creation functio
   * [Private client (Back to Back)](#private-client-back-to-back)
   * [Resource complet field list](#resource-complet-field-list)
 * [Example](#example)
+* [Run tests](#run-tests)
 * [Contribution](#contribution)
 
 ## Principles
@@ -140,6 +141,29 @@ resource "forgerock_oauth2Client" "myPrivateClient" {
 ### Example
 
 You can find a complete example [here](./example/main.tf)
+
+### Run tests
+
+We provide some unit tests and integration tests.
+From the root directory, you can  :
+
+* Run all of them:
+
+```bash
+go test -v ./...       
+```
+
+* Run only the unit tests:
+
+```bash
+go test -v -tags=unit_tests ./...       
+```
+
+* Run only the integration tests:
+
+```bash
+go test -v -tags=integration_tests ./...       
+```
 
 ### Resource complete field list
 
